@@ -13,6 +13,8 @@ def chunks(list_data,chunk_size):
         i=i+1
         if i==chunk_size:
             yield chunk
+            i=0
             chunk=[]
+    if chunk:
+        yield chunk
 
-    yield chunk
