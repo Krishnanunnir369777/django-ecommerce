@@ -15,6 +15,30 @@ body{
     padding: 20px;
 }
 
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.navbar-icons a {
+    display: inline-block;
+    line-height: 0;
+}
+
+.navbar-icons img {
+    cursor: pointer;
+    transition: transform 0.3s;
+    vertical-align: middle;
+    display: block;
+}
+
+.navbar-icons img:hover {
+    transform: scale(1.1);
+}
+
 nav{
     flex: 1;
     text-align: right;
