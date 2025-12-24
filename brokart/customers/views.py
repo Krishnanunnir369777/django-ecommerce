@@ -28,6 +28,7 @@ def show_account(request):
             # create customer account
             customer=Customer.objects.create(
                 user=user,
+                name=username,  # Use username as name
                 phone=phone,
                 address=address
             )
@@ -43,7 +44,9 @@ def show_account(request):
             user=authenticate(username=username,password=password)
             if user:
                 login(request,user)
-                return redirect('home')
+                messages.success(request, f'Welcome back, {user.username}!')
+                next_url = request.GET.get('next', 'home')
+                return redirect(next_url if next_url != 'None' else 'home')
             else:
                 messages.error(request,'invalid user credentials')
     return render(request,'account.html',context )
