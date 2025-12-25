@@ -22,10 +22,8 @@ from . import views
 urlpatterns = [
     path('cart', views.show_cart,name='cart'),
     path('add_to_cart',views.add_to_cart,name='add_to_cart'),
-    path('remove_from_cart/<int:item_id>',views.remove_from_cart,name='remove_from_cart'),
-    path('update_cart_quantity/<int:item_id>',views.update_cart_quantity,name='update_cart_quantity'),
-    path('checkout',views.checkout,name='checkout'),
-    path('order_history',views.order_history,name='order_history'),
-    path('order/<int:order_id>',views.order_detail,name='order_detail'),
+    path('remove_from_cart/<int:item_id>',views.remove_from_cart,name='remove_from_cart')
+    
+    
 ]
 

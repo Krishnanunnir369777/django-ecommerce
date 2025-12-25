@@ -45,8 +45,7 @@ def show_account(request):
             if user:
                 login(request,user)
                 messages.success(request, f'Welcome back, {user.username}!')
-                next_url = request.GET.get('next', 'home')
-                return redirect(next_url if next_url != 'None' else 'home')
+                return redirect('home')
             else:
                 messages.error(request,'invalid user credentials')
     return render(request,'account.html',context )

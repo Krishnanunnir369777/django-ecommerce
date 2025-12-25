@@ -11,6 +11,7 @@ def show_cart(request):
     context['subtotal'] = 0
     context['tax'] = 0
     context['total'] = 0
+    context['user'] = request.user  # Explicitly pass user to context
     
     if request.user.is_authenticated:
         # Get or create customer profile
